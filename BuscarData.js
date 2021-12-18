@@ -1,9 +1,9 @@
 /*
 **============================= SE IDENTIFICA EL INPUT BUSCADOR =============================
 */
-document.querySelector("#buscar-data").onchange = function(){
+document.querySelector("#buscar-data").addEventListener('keyup', function(){
 	BuscarElementos()
-}
+})
 
 /*
 **============================= SE TOMAN LOS ELEMENTOS QUE SE MODIFICARAN SEGUN EL RESULTADO DE BUSQUEDA =============================
@@ -44,7 +44,19 @@ function BuscarElementos() {
 
 					//VER NIVEL DE NODO
 					console.log("Nivel -> Nodo[2]")
+
+					//indexOf () devuelve la posición de la primera aparición de un valor especificado en una cadena.
+					if(txtContent.indexOf(buscando)>=0){
+						//SI UN ELEMENTO COINCIDE LE QUITAMOS LA CLASE HIDE SI EN DADO CASO LO TIENE
+						contenedorElementos[i].classList.remove("hide")
+						//Y OCULTAMOS EL MENSAJE POR SI SE ESTÁ MOSTRANDO
+						msj.classList.add("hide")
+					}else{
+						contenedorElementos[i].classList.add("hide")
+						msj.innerHTML = html
+					}
 					
+					/*
 					//COMPARAMOS SI EL CONTENIDO ES IGUAL A LO BUSCADO
 					if((i+1) == contenedorElementos.length && txtContent != buscando){
 						//SI ES EL ULTIMO ELEMENTO Y NO COINCIDEN LOS RESULTADOS, LOS OCULTAMOS TODOS
@@ -60,6 +72,7 @@ function BuscarElementos() {
 						//Y OCULTAMOS EL MENSAJE POR SI SE ESTÁ MOSTRANDO
 						msj.classList.add("hide")
 					}
+					*/
 				} else {
 					//SI EL NODO HIJO NO TIENE HIJOS, SE REALIZAN LAS MISMAS OPERACIONES ANTERIORES
 					txtContent = nodo1[1].textContent.toString().toUpperCase()
@@ -67,14 +80,15 @@ function BuscarElementos() {
 					//VER NIVEL DE NODO
 					console.log("Nivel -> Nodo[1]")
 					
-					if((i+1) == contenedorElementos.length && txtContent != buscando){
+					//indexOf () devuelve la posición de la primera aparición de un valor especificado en una cadena.
+					if(txtContent.indexOf(buscando)>=0){
+						//SI UN ELEMENTO COINCIDE LE QUITAMOS LA CLASE HIDE SI EN DADO CASO LO TIENE
+						contenedorElementos[i].classList.remove("hide")
+						//Y OCULTAMOS EL MENSAJE POR SI SE ESTÁ MOSTRANDO
+						msj.classList.add("hide")
+					}else{
 						contenedorElementos[i].classList.add("hide")
 						msj.innerHTML = html
-					} else if(txtContent != buscando){
-						contenedorElementos[i].classList.add("hide")
-					} else {
-						contenedorElementos[i].classList.remove("hide")
-						msj.classList.add("hide")
 					}
 				}
 			} else {
@@ -83,16 +97,17 @@ function BuscarElementos() {
 				
 				//VER NIVEL DE NODO
 				console.log("Nivel -> Nodo[0]")
-				
-				if((i+1) == contenedorElementos.length && txtContent != buscando){
-						contenedorElementos[i].classList.add("hide")
-						msj.innerHTML = html
-					} else if(txtContent != buscando){
-						contenedorElementos[i].classList.add("hide")
-					} else {
-						contenedorElementos[i].classList.remove("hide")
-						msj.classList.add("hide")
-					}
+
+				//indexOf () devuelve la posición de la primera aparición de un valor especificado en una cadena.
+				if(txtContent.indexOf(buscando)>=0){
+					//SI UN ELEMENTO COINCIDE LE QUITAMOS LA CLASE HIDE SI EN DADO CASO LO TIENE
+					contenedorElementos[i].classList.remove("hide")
+					//Y OCULTAMOS EL MENSAJE POR SI SE ESTÁ MOSTRANDO
+					msj.classList.add("hide")
+				}else{
+					contenedorElementos[i].classList.add("hide")
+					msj.innerHTML = html
+				}
 			}
 
 		}
