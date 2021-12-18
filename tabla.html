@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Buscar en TABLA</title>
+	<style type="text/css">
+		.hide{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<!-- BUSCADOR CON SU RESPECTIVO ID buscar-data -->
+		<input type="text" name="buscar-data" id="buscar-data">
+	</div>
+	<div id="Categoria-1" class="caja-contenedor">
+
+		<!-- MENSAJE DE RESULTADOS NO ENCONTRADOS -->
+		<span id="no_results" class="no_results"></span>
+
+		<table border="1" cellspacing="0" cellpadding="2" bordercolor="#e7e7e7">
+			<thead>
+				<tr>
+					<td colspan="2">LISTADO</td>
+				</tr>
+				<tr>
+					<td>Producto</td>
+					<td>Precio</td>
+				</tr>
+			</thead>
+
+			<!-- IDENTIFICAR EL CONTENEDOR Y COLOCAR LA CLASE contenedor-data -->
+			<tbody class="contenedor-data">
+				<!-- A CADA TUPLA O ELEMENTO AGREGAR LA CLASE data -->
+				<tr class="data">
+					<td>
+						<h3>Pollo - Frisa</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Pollo - Rey</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Pechuga</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Alitas</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Mollejas</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Higado</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Rostizador</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Aceite Bidon</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Papas</h3>
+					</td>
+					<td>5</td>
+				</tr>
+				<tr class="data">
+					<td>
+						<h3>Ensalada</h3>
+					</td>
+					<td>5</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- INCLUIR EL SCRIPT -->
+	<script src="BuscarData.js" type="text/javascript"></script>
+</body>
+</html>
